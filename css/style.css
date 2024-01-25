@@ -318,7 +318,6 @@ ul {
 .icon-box {
   height: 40px;
   width: 40px;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-href {
@@ -330,11 +329,15 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-timing-function: background-color cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon-href:hover,
-.social-icon-href:focus,
+.social-icon-href:hover {
+  background-color: #404bbf;
+}
+.social-icon-href:focus {
+  background-color: #404bbf;
+}
 .social-icon-href:active {
   background-color: #404bbf;
 }
@@ -475,8 +478,14 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-href:hover,
-.footer-social-href:focus,
+.footer-social-href:hover {
+  background-color: #31d0aa;
+}
+
+.footer-social-href:focus {
+  background-color: #31d0aa;
+}
+
 .footer-social-href:active {
   background-color: #31d0aa;
 }
