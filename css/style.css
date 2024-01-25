@@ -330,7 +330,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-href:hover,
@@ -476,8 +476,8 @@ ul {
 }
 
 .footer-social-href:hover,
-.footer-icon-href:focus,
-.footer-icon-href:active {
+.footer-social-href:focus,
+.footer-social-href:active {
   background-color: #31d0aa;
 }
 
