@@ -91,7 +91,7 @@ ul {
   color: #404bbf;
 }
 
-.studio-nav {
+/* .studio-nav {
   position: relative;
   color: #404bbf;
   letter-spacing: 0.02em;
@@ -112,6 +112,21 @@ ul {
   content: '';
   border-radius: 2px;
   background-color: #404bbf;
+} */
+
+.nav-list-el.current {
+  position: relative;
+  color: #404bbf;
+}
+.nav-list-el.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  width: 100%;
 }
 
 .nav-list-el {
@@ -122,6 +137,7 @@ ul {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
