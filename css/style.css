@@ -48,13 +48,13 @@ ul {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
-  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .nav-container {
@@ -84,40 +84,27 @@ ul {
   position: relative;
 }
 
-.nav-title a:hover {
-  color: #404bbf;
-}
-
-.nav-title a:active {
-  color: #404bbf;
-  /* text-decoration: underline; */
-}
-
+.nav-title a:hover,
+.nav-title a:active,
 .nav-title a:focus {
   color: #404bbf;
-  /* text-decoration: underline; */
 }
 
 .studio-nav {
+  position: relative;
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .studio-nav::after {
-  display: block;
   position: absolute;
-  height: 0;
-  width: 0;
-}
-
-.studio-nav:hover::after {
-  content: '';
-  width: 48px;
   height: 4px;
   bottom: -1px;
+  left: 0;
+  width: 100%;
+  content: '';
   border-radius: 2px;
   background-color: #404bbf;
-  left: 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-list-el {
@@ -314,10 +301,6 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .section-team-list-el:hover .icon-box {
-  background-color: #404bbf;
-} */
-
 .social-icon-box {
   display: flex;
   gap: 24px;
@@ -326,7 +309,6 @@ ul {
 }
 
 .icon-box {
-  /* flex-basis: calc((100% - 72px) / 4); */
   height: 40px;
   width: 40px;
 }
@@ -337,13 +319,16 @@ ul {
   height: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
-  /* padding: 12px; */
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon-href:hover,
+.social-icon-href:hover {
+  background-color: #404bbf;
+}
+
 .social-icon-href:focus {
   background-color: #404bbf;
 }
@@ -467,10 +452,8 @@ ul {
 }
 
 .footer-icon-box {
-  /* flex-basis: calc((100% - 48px) / 4); */
   height: 40px;
   width: 40px;
-  /* padding: 8px; */
 }
 
 .footer-social-href {
@@ -487,7 +470,7 @@ ul {
 }
 
 .footer-social-href:hover,
-.footer-icon-box:active {
+.footer-icon-href:focus {
   background-color: #31d0aa;
 }
 
