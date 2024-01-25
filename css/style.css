@@ -53,11 +53,14 @@ ul {
 .header-container {
   display: flex;
   justify-content: space-between;
+  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .nav-container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -95,6 +98,10 @@ ul {
   /* text-decoration: underline; */
 }
 
+.studio-nav {
+  color: #404bbf;
+}
+
 .studio-nav::after {
   display: block;
   position: absolute;
@@ -106,9 +113,11 @@ ul {
   content: '';
   width: 48px;
   height: 4px;
-  bottom: 0px;
+  bottom: -1px;
   border-radius: 2px;
   background-color: #404bbf;
+  left: 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-list-el {
@@ -135,6 +144,7 @@ ul {
 .address-list-el {
   letter-spacing: 0.02em;
   line-height: 1.5;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio {
@@ -158,16 +168,17 @@ ul {
 .section-first {
   background-color: #2e2f42;
   background-image: linear-gradient(
-      to top,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50% 50%;
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
+  margin: 0 auto;
   padding: 188px 0;
+  max-width: 1440px;
 }
 
 .section-first-headder {
@@ -199,6 +210,7 @@ ul {
   margin-right: auto;
   min-width: 169px;
   height: 56px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-order:hover {
@@ -243,10 +255,15 @@ ul {
   flex-basis: calc((100% - 72px) / 4);
 }
 
-.icon-advan {
-  border: solid 1px #8e8f99;
+.icon-advan-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  background-color: #f4f4fd;
   border-radius: 4px;
   margin-bottom: 8px;
+  border: solid 1px #8e8f99;
 }
 
 .section-title-p {
@@ -297,9 +314,9 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.section-team-list-el:hover .icon-box {
+/* .section-team-list-el:hover .icon-box {
   background-color: #404bbf;
-}
+} */
 
 .social-icon-box {
   display: flex;
@@ -309,12 +326,26 @@ ul {
 }
 
 .icon-box {
-  flex-basis: calc((100% - 72px) / 4);
+  /* flex-basis: calc((100% - 72px) / 4); */
   height: 40px;
-  max-width: 40px;
+  width: 40px;
+}
+
+.social-icon-href {
+  fill: #f4f4fd;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
-  padding: 12px;
+  /* padding: 12px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-href:hover,
+.social-icon-href:focus {
+  background-color: #404bbf;
 }
 
 .social-icon {
@@ -360,23 +391,18 @@ ul {
   width: 100%;
   height: 100%;
   background-color: #4d5ae5;
-  transform: translatey(100%);
+  transform: translateY(100%);
   transition-property: transform;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-list-el:hover .portf-img-overlay {
-  transform: translatey(0);
-}
-
-.overlay-content {
   color: #f4f4fd;
-  padding-top: 40px;
-  padding-right: 32px;
-  padding-left: 32px;
+  padding: 40px 32px;
   letter-spacing: 0.02em;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.portfolio-list-el:hover .portf-img-overlay {
+  transform: translateY(0);
 }
 
 .portfolio-card {
@@ -396,6 +422,7 @@ ul {
 
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 
 .logo-footer {
@@ -424,10 +451,6 @@ ul {
   margin-right: 120px;
 }
 
-.footer-social {
-  /* display: inline-block; */
-}
-
 .footer-social-header {
   letter-spacing: 0.02em;
   color: #ffffff;
@@ -438,27 +461,32 @@ ul {
 
 .footer-icons {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
   margin-top: 8px;
 }
 
 .footer-icon-box {
-  flex-basis: calc((100% - 48px) / 4);
+  /* flex-basis: calc((100% - 48px) / 4); */
   height: 40px;
-  max-width: 40px;
+  width: 40px;
+  /* padding: 8px; */
+}
+
+.footer-social-href {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-icon-box:hover {
-  background-color: #31d0aa;
-}
-
+.footer-social-href:hover,
 .footer-icon-box:active {
   background-color: #31d0aa;
 }
